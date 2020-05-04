@@ -3,24 +3,27 @@ import { View, Text, ImageBackground, Button, StyleSheet, TextInput, Image } fro
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Citas_Ingreso from './sreens/login';
+import listQuotes from './sreens/list-quotes';
+
 function HomeScreen({navigation}) {
   return (
     <View style={styles.fondo}>
-       <ImageBackground  source= {require('./assets/logoSanitas.jpg')} style={styles.container}>
-          <Text>Bienvenido</Text>       
-       </ImageBackground>
-       <ImageBackground  source= {require('./assets/logo2.jpg')} style={styles.container}>
+       <ImageBackground  source= {require('./assets/fondo2.jpg')} style={styles.container}>
              
        </ImageBackground>
+      {/*  <ImageBackground  source= {require('./assets/logo2.jpg')} style={styles.container}>
+             
+       </ImageBackground> */}
        
 
       
 
        <View style={styles.centerView}>
-          <Image source= {require('./assets/sanitasInicio.png')} style={styles.logoInicio}></Image>
-         
-         
-          <Button  title="Asigna Tu Cita" onPress={() => navigation.navigate('Ingreso_Citas')}  />
+          {/* <Image source= {require('./assets/sanitasInicio.png')} style={styles.logoInicio}></Image> */}
+          <Text>Bienvenido</Text>   
+          {/* <TextInput placeholder= 'Nombre de Usuario' placeholderTextColor = 'blue' maxLength = {18} style={styles.box} > </TextInput>
+          <TextInput placeholder= 'Cedula Ciudadania' placeholderTextColor = 'blue' maxLength = {10} style={styles.box} > </TextInput>   */}
+          <Button  title="Asigna Tu Cita" onPress={() => navigation.navigate('Ingreso_Citas')} style={styles.logoInicio}  />
         </View> 
   
     </View>
@@ -38,6 +41,7 @@ function App() {
       <Stack.Navigator initialRouteName="Inicio">
         <Stack.Screen name="Inicio" component={HomeScreen} />
         <Stack.Screen name="Ingreso_Citas" component={Citas_Ingreso} />
+        <Stack.Screen name="Lista de Citas" component={listQuotes} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -63,12 +67,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     position:'absolute',
-    marginTop:120,
-    marginLeft: 30,
-    height:250,
-    width:315,
+    marginTop:80,
+    marginLeft: 70,
+    height:150,
+    width:215,
     backgroundColor:'white',
     borderRadius: 35
+  },
+  box :{
+    alignItems : 'center',
+    justifyContent: 'center',
+    borderWidth : 1,
+    borderRadius : 40,
+    borderColor:'blue',
+    width:180,
+    marginTop : 10
   },
  
   logoInicio:{

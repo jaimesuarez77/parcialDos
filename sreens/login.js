@@ -1,22 +1,26 @@
 import  React from 'react';
 import { View, Text, ImageBackground, Button, StyleSheet, TextInput } from 'react-native';
 
- function Citas_Ingreso(){
+
+ function Citas_Ingreso({navigation}){
     return(
-        <ImageBackground  source= {require('../assets/logo2.jpg')} style={styles.container}>
-          <Text>Bienvenido</Text> 
-          <TextInput placeholder= 'Nombre de Usuario' placeholderTextColor = 'white' maxLength = {18} style={styles.box} > </TextInput>
-          <TextInput placeholder= 'Cedula Ciudadania' placeholderTextColor = 'white' maxLength = {10} style={styles.box} > </TextInput>  
-          <TextInput placeholder= 'Nombre de Usuario' placeholderTextColor = 'white' maxLength = {18} style={styles.box} > </TextInput>
-          <TextInput placeholder= 'Cedula Ciudadania' placeholderTextColor = 'white' maxLength = {10} style={styles.box} > </TextInput> 
-          <TextInput placeholder= 'Nombre de Usuario' placeholderTextColor = 'white' maxLength = {18} style={styles.box} > </TextInput>
-          <TextInput placeholder= 'Cedula Ciudadania' placeholderTextColor = 'white' maxLength = {10} style={styles.box} > </TextInput>     
+        <ImageBackground  source= {require('../assets/fondo2.jpg')} style={styles.container}>
+          <Text >Bienvenido</Text> 
+          <TextInput placeholder= 'Cedula de Ciudadania' placeholderTextColor = 'red' maxLength = {11} style={styles.box} > </TextInput>
+          <TextInput placeholder= 'Nombres Completos' placeholderTextColor = 'white' maxLength = {25} style={styles.box} > </TextInput>  
+          <TextInput placeholder= 'Apellidos' placeholderTextColor = 'white' maxLength = {25} style={styles.box} > </TextInput>
+          <TextInput placeholder= 'Fecha de Nacimiento' placeholderTextColor = 'white' maxLength = {10} style={styles.box} > </TextInput> 
+          <TextInput placeholder= 'Ciudad de Residencia' placeholderTextColor = 'white' maxLength = {18} style={styles.box} > </TextInput>
+          <TextInput placeholder= 'Número Celular' placeholderTextColor = 'white' maxLength = {10} style={styles.box} > </TextInput> 
+          <Button  title="Confirme tu cita" onPress={() => navigation.navigate('Lista de Citas')}  />    
        </ImageBackground>
 
     );
 
 
 }
+
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -35,7 +39,7 @@ const styles = StyleSheet.create({
         borderColor:'blue',
         width:180,
         marginTop : 10
-      },
+      }
 
 
 });
