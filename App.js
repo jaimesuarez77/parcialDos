@@ -2,8 +2,9 @@ import * as React from 'react';
 import { View, Text, ImageBackground, Button, StyleSheet, TextInput, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Citas_Ingreso from './sreens/login';
+import Citas_Ingreso from './sreens/create-quotes';
 import listQuotes from './sreens/list-quotes';
+import { TouchableHighlight } from 'react-native-gesture-handler';
 
 function HomeScreen({navigation}) {
   return (
@@ -19,11 +20,14 @@ function HomeScreen({navigation}) {
       
 
        <View style={styles.centerView}>
-          {/* <Image source= {require('./assets/sanitasInicio.png')} style={styles.logoInicio}></Image> */}
+          <Image source= {require('./assets/sanitasInicio.png')} style={styles.logoInicio}></Image> 
           <Text>Bienvenido</Text>   
           {/* <TextInput placeholder= 'Nombre de Usuario' placeholderTextColor = 'blue' maxLength = {18} style={styles.box} > </TextInput>
           <TextInput placeholder= 'Cedula Ciudadania' placeholderTextColor = 'blue' maxLength = {10} style={styles.box} > </TextInput>   */}
-          <Button  title="Asigna Tu Cita" onPress={() => navigation.navigate('Ingreso_Citas')} style={styles.logoInicio}  />
+          <TouchableHighlight onPress={() => navigation.navigate('Ingreso_Citas')} style={styles.InitButton}>
+            <Text>Asigna Tu Cita</Text>
+          </TouchableHighlight>
+          {/* <Button  title="Asigna Tu Cita" onPress={() => navigation.navigate('Ingreso_Citas')} style={styles.logoInicio}  /> */}
         </View> 
   
     </View>
@@ -68,9 +72,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     position:'absolute',
     marginTop:80,
-    marginLeft: 70,
-    height:150,
-    width:215,
+    marginLeft: 25,
+    height:250,
+    width:315,
     backgroundColor:'white',
     borderRadius: 35
   },
@@ -84,8 +88,10 @@ const styles = StyleSheet.create({
     marginTop : 10
   },
  
-  logoInicio:{
-    borderRadius:50
+  InitButton:{
+    borderRadius:50,
+    fontSize: 30
+    
 
   }
 });
